@@ -1,0 +1,214 @@
+/* Reset & Base Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f0f4f8; /* Soft light background color */
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  /* Main Container */
+  .section-center {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  /* Header */
+  .grocery-form h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1e293b;
+    font-weight: bold;
+  }
+  
+  /* Input & Button Row */
+  .form-control {
+    display: flex;
+    gap: 1rem; /* Added gap between input and button */
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .grocery {
+    flex: 1;
+    padding: 1rem 1.25rem; /* Adding padding for a spacious feel */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: #f9fafb; /* Soft light background for input box */
+    color: #333;
+  }
+  
+  .grocery:focus {
+    border-color: #3b82f6;
+    background-color: #e0f7fa; /* Slight background change on focus */
+  }
+  
+  /* Add Button */
+  .submit-btn {
+    background: linear-gradient(to right, #6ee7b7, #3b82f6); /* Fresh green to blue gradient */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .submit-btn:hover {
+    background: linear-gradient(to right, #3b82f6, #6ee7b7); /* Swap gradient on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Grocery List Container */
+  .grocery-container {
+    width: 100%;
+  }
+  
+  .grocery-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Grocery Item */
+  .grocery-item {
+    background: #f9fafb;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+  }
+  
+  .grocery-item:hover {
+    background-color: #f1f5f9;
+  }
+  
+  .item-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .item-content input[type="checkbox"] {
+    transform: scale(1.2);
+    accent-color: #3b82f6;
+    cursor: pointer;
+  }
+  
+  .item-content span {
+    font-size: 1rem;
+    color: #111827;
+  }
+  
+  .item-content span.completed {
+    text-decoration: line-through;
+    color: #94a3b8;
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .delete-btn:hover {
+    color: #dc2626;
+  }
+  
+  /* Toast Container */
+  .toast-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Individual Toast */
+  .toast {
+    position: relative;
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem 1.25rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    animation: fadeInSlideDown 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+  
+  /* Close Button */
+  .toast .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
+  /* Timer Bar */
+  .timer {
+    margin-top: 10px;
+    height: 4px;
+    border-radius: 2px;
+    width: 100%;
+    animation: shrinkBar 5s linear forwards;
+  }
+  
+  /* Animations */
+  @keyframes fadeInSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes shrinkBar {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0%;
+    }
+  }
+  
